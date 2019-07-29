@@ -5,9 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet"  type="text/css" media="screen" href="style.css" />
+
     </head><body>
         <div class="section">
             <div class="container">
@@ -36,7 +42,7 @@
                 	<input id="apellido" placeholder="Enter you Last Name" type="text" name="apellido" class="form-control">
         </div>
 
-        <button type="submit" name="A" class="btn btn-success btn-sm">Buscar</button>
+        <button type="submit" name="A" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span> Buscar</button>
         <a href="alphabetic.php"><input type="button" value="Nueva Búsqueda" class="btn btn-primary  btn-sm"></a>
         <br><br>
 
@@ -50,6 +56,8 @@
 
     	if($conn){
 
+
+
     		switch(isset($_POST)){
 
 
@@ -61,10 +69,6 @@
 
     			
     		}
-
-
-
-
 
 
     }

@@ -28,8 +28,8 @@
 						
 	mysql_select_db('agenda');			   	
 	$sql = "SELECT * FROM usuarios where user='$user' and password='$pass1'";
-	$q = mysql_query($sql,$conn);	
-	
+	$q = mysql_query($sql,$conn);
+
 	
 		if(!$q) 
 		{	
@@ -39,13 +39,28 @@
 
 			if($user = mysql_fetch_assoc($q))
 			{
+				if(strcmp($_POST["user"], 'root') == 0){
+
 				echo '<div class="alert alert-success" role="alert">';
 				echo "Bienvenido!  " .$_POST["user"];
 				echo "<br>";
 				echo "Presione -Aceptar- para continuar";
   				echo "</div>";
-				echo '<a href="main.html"><br><br><button type="submit" class="btn btn-primary">Aceptar</button></a><br>';		
+				echo '<a href="mainRoot.html"><br><br><button type="submit" class="btn btn-primary">Aceptar</button></a><br>';		
 			}
+
+			else
+			{
+				echo '<div class="alert alert-success" role="alert">';
+				echo "Bienvenido!  " .$_POST["user"];
+				echo "<br>";
+				echo "Presione -Aceptar- para continuar";
+  				echo "</div>";
+				echo '<a href="main.html"><br><br><button type="submit" class="btn btn-primary">Aceptar</button></a><br>';
+			}
+		}
+
+			
 
 			else
 			{

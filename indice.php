@@ -2556,7 +2556,6 @@ function filtrarM(){
 								
 				
 				$query = "update contactos set nombre = '$nombre',  apellido = '$apellido', email = '$mail', telefono1 = '$telefono1',telefono2 = '$telefono2',movil = '$movil',fechaNacimiento = '$fNac',oficina = '$oficina',cargo = '$cargo' where id = '$fila[id]'";
-				
 				mysql_select_db('agenda');
 				$resultado = mysql_query($query);
 				

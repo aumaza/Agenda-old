@@ -5,14 +5,15 @@
 $today = date("F j Y, H:i");
 
 $month = date("n");
-$monthBefore = mktime(0, 0, 0, date("m")-1, date("d"),   date("Y"));
-$monthAfter  = mktime(0, 0, 0, date("m")+1, date("d"),   date("Y"));
+$month_before = mktime(0, 0, 0, date("m")-1, date("d"),   date("Y"));
+$month_after  = mktime(0, 0, 0, date("m")+1, date("d"),   date("Y"));
 
 $year = date("Y");
-$yearBefore = mktime(0, 0, 0, date("m"),   date("d"),   date("Y")-1);
-$yearAfter = mktime(0, 0, 0, date("m"),   date("d"),   date("Y")+1);
+$year_before = mktime(0, 0, 0, date("m"),   date("d"),   date("Y")-1);
+$year_after = mktime(0, 0, 0, date("m"),   date("d"),   date("Y")+1);
 
 $diaActual = date("j");
+
 
  
 
@@ -32,6 +33,13 @@ $meses=array(1=>"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
 
 "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 
+
+//llamamos al mes siguiente
+
+
+
+
+
 ?>
 
  
@@ -45,6 +53,11 @@ $meses=array(1=>"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet"  type="text/css" media="screen" href="calendarStyle.css" />
@@ -140,13 +153,17 @@ $meses=array(1=>"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
           <div class="col-md-12">
 <table class="table table-responsive-sm table-striped" id="calendar">
 
+	<form action="calendarioA.php" method="POST">
 	<div class="btn-toolbar" role="toolbar">
 		<div class="btn-group">
-			<button type="submit" name="A" class="btn btn-success btn-sm">Mes Anterior</button>
-			<button type="submit" name="B" class="btn btn-warning btn-sm">Mes Siguiente</button>
+			<button type="submit" name="A" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-menu-left"></span> Mes Anterior</button>
+			<button type="submit" name="B" class="btn btn-warning btn-sm">Mes Siguiente <span class="glyphicon glyphicon-menu-right"></span></button>
 		</div>
+	</div>
+	</form>
 
 	<caption><?php echo $today?></caption>
+
 
 	<tr>
 		<th class="text-nowrap text-center">Lun</th>
@@ -161,6 +178,9 @@ $meses=array(1=>"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
 	<tr bgcolor="silver">
 
 		<?php
+
+		
+		
 
 		$last_cell=$diaSemana+$ultimoDiaMes;
 
@@ -219,9 +239,16 @@ $meses=array(1=>"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
 			}
 
 		}
-		
+	
+
+
+
+
+	
 
 	?>
+
+
 
 	</tr>
 </table>
@@ -229,5 +256,6 @@ $meses=array(1=>"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
 </div>
 </div>
 </div>
+<a href="main.html"><input type="button" value="Volver al Menú Principal" class="btn btn-primary"></a>
 </body>
 </html>
